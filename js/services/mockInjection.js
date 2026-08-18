@@ -1,0 +1,3 @@
+import {updateState} from '../state.js';
+export async function simulateInjection(game,onProgress){for(const s of ['Preparing game...','Checking installation...','Checking Steam configuration...','Preparing simulated integration...','Finishing...']){onProgress?.(s);await wait(500);}updateState(st=>{st.logs.unshift(log(game.name,'Injection Simulation','Injection','success','No game or Steam files were modified.'));});return {success:true};}
+const wait=ms=>new Promise(r=>setTimeout(r,ms)); const log=(game,action,type,status,detail)=>({id:Date.now(),time:new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}),game,action,type,status,detail});

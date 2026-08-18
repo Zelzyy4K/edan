@@ -1,0 +1,3 @@
+import {updateState} from '../state.js';
+export async function simulateBypass(game,kind,onProgress){for(const s of ['Preparing...','Checking files...','Checking dependencies...','Applying simulated configuration...','Completed']){onProgress?.(s);await wait(520);}updateState(st=>st.logs.unshift(log(game?.name||'System',`${kind} Simulation`,'Bypass','success','Simulation only. No DRM, security, or game files were modified.')));return {success:true};}
+const wait=ms=>new Promise(r=>setTimeout(r,ms)); const log=(game,action,type,status,detail)=>({id:Date.now(),time:new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}),game,action,type,status,detail});

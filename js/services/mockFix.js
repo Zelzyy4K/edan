@@ -1,0 +1,3 @@
+import {updateState} from '../state.js';
+export async function simulateFix(game,kind,onProgress){for(const s of ['Scanning target...','Checking demo configuration...','Evaluating dependencies...','Applying simulated repair...','Verifying result...']){onProgress?.(s);await wait(500);}updateState(st=>st.logs.unshift(log(game?.name||'System',`${kind} Simulation`,'Fix','success','Simulation only. No real files were modified.')));return {success:true};}
+const wait=ms=>new Promise(r=>setTimeout(r,ms)); const log=(game,action,type,status,detail)=>({id:Date.now(),time:new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}),game,action,type,status,detail});

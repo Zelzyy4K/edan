@@ -1,0 +1,1 @@
+export function dropdown({label,options,value,onChange}){ const wrap=document.createElement('label');wrap.className='field compact-field';wrap.innerHTML=`<span>${label}</span><select>${options.map(o=>`<option value="${o}" ${o===value?'selected':''}>${o}</option>`).join('')}</select>`;wrap.querySelector('select').onchange=e=>onChange(e.target.value);return wrap; }

@@ -1,32 +1,45 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Steam Game Tools - local browser prototype" />
-  <title>Steam Game Tools</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/sidebar.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/dashboard.css">
-  <link rel="stylesheet" href="css/games.css">
-  <link rel="stylesheet" href="css/settings.css">
-  <link rel="stylesheet" href="css/responsive.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Steam Game Tools</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div id="app" class="app-shell">
-    <aside id="sidebar" class="sidebar"></aside>
-    <main class="main-shell">
-      <header id="topbar" class="topbar"></header>
-      <section id="page-content" class="page-content" aria-live="polite"></section>
-    </main>
-  </div>
-  <div id="modal-root"></div>
-  <div id="toast-root" class="toast-root" aria-live="polite" aria-atomic="true"></div>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script type="module" src="js/app.js"></script>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brand-mark">S</div><div><b>Steam Game Tools</b><span>Personal Toolkit</span></div></div>
+    <nav id="nav">
+      <div class="nav-label">OVERVIEW</div>
+      <button class="nav-item active" data-page="home">⌂ <span>Home</span></button>
+      <button class="nav-item" data-page="games">▦ <span>Games</span></button>
+      <div class="nav-label">TOOLS</div>
+      <button class="nav-item" data-page="bypass">◈ <span>Bypass</span></button>
+      <button class="nav-item" data-page="injection">↯ <span>Injection</span></button>
+      <button class="nav-item" data-page="save">☁ <span>Save & Restore</span></button>
+      <button class="nav-item" data-page="fix">✦ <span>Fix</span></button>
+      <button class="nav-item" data-page="steam">↻ <span>Steam</span></button>
+      <div class="nav-label">SYSTEM</div>
+      <button class="nav-item" data-page="logs">≡ <span>Activity Logs</span></button>
+      <button class="nav-item" data-page="settings">⚙ <span>Settings</span></button>
+      <button class="nav-item" data-page="about">ⓘ <span>About</span></button>
+    </nav>
+    <button id="collapse" class="collapse-btn">‹ <span>Collapse Sidebar</span></button>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <div><span class="eyebrow">STEAM TOOLKIT</span><h1 id="page-title">Home</h1></div>
+      <div class="top-actions"><button class="search-btn" id="globalSearch">⌕ <span>Search</span><kbd>Ctrl K</kbd></button><div class="status"><i></i> Ready</div></div>
+    </header>
+    <section id="content" class="content"></section>
+  </main>
+</div>
+<div id="toast" class="toast"></div>
+<div id="modal-root"></div>
+<script src="js/app.js"></script>
 </body>
 </html>
